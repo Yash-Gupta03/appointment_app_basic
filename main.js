@@ -30,7 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
         newElement.appendChild(editBtn);
         newBtn.onclick = () => {
           // localStorage.removeItem(obj.email);
-          parentEle.removeChild(newElement);
+          //   parentEle.removeChild(newElement);
+          axios.delete(
+            `https://crudcrud.com/api/2d1f52ce6deb492fa8f1250a34962399/bookingData/${res.data[i]._id}`
+          );
         };
         editBtn.onclick = () => {
           // localStorage.removeItem(obj.email);
