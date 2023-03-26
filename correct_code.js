@@ -43,7 +43,7 @@ function showListofRegisteredUser(user) {
   const parentNode = document.getElementById("list");
   const createNewUserHtml = `<li id='${user._id}'>${user.uname} - ${user.email} - ${user.phone} - ${user.uid}
                                     <button onclick=deleteUser('${user._id}')>Delete</button>
-                                    <button onclick=editUser('${user}')>Edit</button>
+                                    <button onclick=editUser('${user._id}','${user.uname}','${user.email}','${user.phone}')>Edit</button>
                                 </li>
                                 `;
   //   console.log(createNewUserHtml);
@@ -51,18 +51,19 @@ function showListofRegisteredUser(user) {
   //   console.log(parentNode.innerHTML);
 }
 
-function editUser(user) {
-  axios.put(
-    `https://crudcrud.com/api/1c123dec5a7b48f6bb35caffe366acdd/bookingData/${user._id}`,
-    {
-      uname: "Yash_Gupta",
-      email: "y@gmail.com",
-      phone: 9685,
-    }
-  );
-  document.getElementById("username").value = obj.uname;
-  document.getElementById("email").value = obj.email;
-  document.getElementById("phone").value = obj.phone;
+function editUser(_id, uname, email, phone) {
+  document.getElementById("username").value = uname;
+  document.getElementById("email").value = email;
+  document.getElementById("phone").value = phone;
+  //   axios.put(
+  //     `https://crudcrud.com/api/1c123dec5a7b48f6bb35caffe366acdd/bookingData/${user._id}`,
+  //     {
+  //       uname: "Yash_Gupta",
+  //       email: "y@gmail.com",
+  //       phone: 9685,
+  //     }
+  //   );
+  deleteUser(_id);
 }
 
 function deleteUser(userID) {
