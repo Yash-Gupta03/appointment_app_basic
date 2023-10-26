@@ -13,7 +13,7 @@ function addToCloud(e) {
   };
   axios
     .post(
-      "https://crudcrud.com/api/1c123dec5a7b48f6bb35caffe366acdd/bookingData",
+      "https://crudcrud.com/api/c93777c64d554bbea4a960faf1595f05/bookingData",
       obj
     )
     .then((res) => {
@@ -27,7 +27,7 @@ function addToCloud(e) {
 window.addEventListener("DOMContentLoaded", () => {
   axios
     .get(
-      "https://crudcrud.com/api/1c123dec5a7b48f6bb35caffe366acdd/bookingData"
+      "https://crudcrud.com/api/c93777c64d554bbea4a960faf1595f05/bookingData"
     )
     .then((res) => {
       for (let i = 0; i < res.data.length; i++) {
@@ -70,7 +70,7 @@ function deleteUser(userID) {
   // localStorage.removeItem(email)
   axios
     .delete(
-      `https://crudcrud.com/api/1c123dec5a7b48f6bb35caffe366acdd/bookingData/${userID}`
+      `https://crudcrud.com/api/c93777c64d554bbea4a960faf1595f05/bookingData/${userID}`
     )
     .then((res) => {
       removeItemFromScreen(userID);
